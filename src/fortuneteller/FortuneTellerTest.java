@@ -30,7 +30,8 @@ public class FortuneTellerTest {
 			System.out.println(
 					"Which of the ROYGBIV colors are your favorite? (If you don't know what ROYGBIV is, enter \"Help\")");
 			String favColor = scanner.next();
-			favColor.toLowerCase(); // make it lower case if there were any caps
+			favColor = favColor.toLowerCase(); // make it lower case if there
+												// were any caps
 
 			boolean needsHelp = false;
 
@@ -119,50 +120,61 @@ public class FortuneTellerTest {
 				car = "Toyota Prius";
 			}
 
-			month.toLowerCase();
-			firstName.toLowerCase();
-			lastName.toLowerCase();
+			month = month.toLowerCase();
+			firstName = firstName.toLowerCase();
+			lastName = lastName.toLowerCase();
 
-			String x = month.substring(0, 0);
 			boolean stillGoing = true;
+			String firstLetterOfTheMonth = month.substring(0, 1);
+			String secondLetterOfTheMonth = month.substring(1, 2);
+			String thirdLetterOfTheMonth = month.substring(2, 3);
+			 
 
-			if (firstName.contains(x) && stillGoing == true) { // if the first
-																// letter of the
-																// birth
+			if (firstName.contains(firstLetterOfTheMonth) && stillGoing == true) { // if
+																					// the
+																					// first
+				// letter of the
+				// birth
 				// month can be found in the first name
 				savings = 40000;
 				stillGoing = false;
 
-			} else if (lastName.contains(x) && stillGoing == true){ // or last
-																	// name			{
+			} else if (lastName.contains(firstLetterOfTheMonth) && stillGoing == true) { // or
+																							// last
+				// name {
 				savings = 40000;
 				stillGoing = false;
 
 			} else if (stillGoing == true) {
-				String y = month.substring(1, 1); // move on to the next letter
-			} else if (firstName.contains(x) && stillGoing == true) {
+				// move on to the next letter
+
+			}
+			if (firstName.contains(secondLetterOfTheMonth) && stillGoing == true) {
 				// if second letter of the birth month can be found in the first
 				// name
 				savings = 1000000;
 				stillGoing = false;
 
-			} else if (lastName.contains(x) && stillGoing == true) { // or last
-																		// name
+			} else if (lastName.contains(secondLetterOfTheMonth) && stillGoing == true) { // or
+																							// last
+				// name
 				savings = 1000000;
 				stillGoing = false;
 
 			} else if (stillGoing == true) {
-				x = month.substring(2, 2); // move on to the third letter
+				// move on to the next letter
 
-			} else if (firstName.contains(x) && stillGoing == true) {
+			}
+			if (firstName.contains(thirdLetterOfTheMonth) && stillGoing == true) {
 				// if third letter of the birth month can be found in the first
 				// name
 
 				savings = 2000000;
 				stillGoing = false;
 
-			} else if (lastName.contains(x) && stillGoing == true) { // or last
-																		// name
+			} else if (lastName.contains(thirdLetterOfTheMonth) && stillGoing == true) { // or
+																							// last
+				// name
 				savings = 2000000;
 				stillGoing = false;
 
@@ -178,7 +190,7 @@ public class FortuneTellerTest {
 			// would the user like to try again?
 			System.out.println("Try again? yes or no");
 			String response = scanner.next();
-			response.toLowerCase();
+			response = response.toLowerCase();
 			useFortuneTeller = response.equals("yes");
 
 		} while (useFortuneTeller); // while they type yes, keep doing fortune
